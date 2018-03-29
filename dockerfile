@@ -3,20 +3,20 @@ RUN mkdir /conf
 ADD _* /conf/
 RUN apk update \
     && apk --no-cache add openrc \
-    && apk --no-cache add curl \
-    && apk --no-cache add git \
-    && apk --no-cache add wget \
-    && apk add --no-cache nginx \
-    && apk add --no-cache nginx-mod-http-geoip \
-    && apk add --no-cache php5 \ 
-    && apk add --no-cache php5-fpm \
-    && apk add --no-cache php5-zlib  \
-    && apk add --no-cache php5-openssl \
-    && apk add --no-cache php5-json \
-    && apk add --no-cache php5-fpm \
-    && apk add --no-cache php5-phar \
-    && apk add --no-cache supervisor \
-    && apk add tzdata \
+    curl \
+    git \
+    wget \
+    nginx \
+    nginx-mod-http-geoip \
+    php5 \ 
+    php5-fpm \
+    php5-zlib  \
+    php5-openssl \
+    php5-json \
+    php5-fpm \
+    php5-phar \
+    supervisor \
+    tzdata \
     && adduser -D -g 'www' www \
     && mkdir /www \
     && chown -R www:www /var/lib/nginx \

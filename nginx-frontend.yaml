@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nginx-frontend
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: geoip
+        tier: frontend
+    spec:
+      containers:
+      - name: geoip-app
+        image: gcr.io/or-playground/geoip
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-frontend
+  labels:
+    app: geoip
+    tier: frontend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: geoip
+    tier: frontend

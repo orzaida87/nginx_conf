@@ -18,7 +18,7 @@ sed -i "s|user\s*=\s*nobody|user = ${PHP_FPM_USER}|g" /etc/php5/php-fpm.conf
 sed -i "s|group\s*=\s*nobody|group = ${PHP_FPM_GROUP}|g" /etc/php5/php-fpm.conf 
 sed -i "s|;log_level\s*=\s*notice|log_level = notice|g" /etc/php5/php-fpm.conf
 sed -i "s|include = |;include = |i" /etc/php5/php-fpm.conf
-sed -i "s|listen = 127.0.0.1:9000|listen = /var/run/php5-fpm.sock|i" /etc/php5/php-fpm.conf
+sed -i "s|listen = 127.0.0.1:9000|listen = /var/run/php-fpm.sock|i" /etc/php5/php-fpm.conf
 
 sed -i "s|display_errors\s*=\s*Off|display_errors = ${PHP_DISPLAY_ERRORS}|i" /etc/php5/php.ini 
 sed -i "s|display_startup_errors\s*=\s*Off|display_startup_errors = ${PHP_DISPLAY_STARTUP_ERRORS}|i" /etc/php5/php.ini 

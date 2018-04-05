@@ -28,6 +28,7 @@ RUN apk update \
     && cp /conf/_supervisord.conf /etc/supervisord.conf \
     && chmod +x /conf/_phpconf.sh \
     && chmod +x /conf/_start.sh \
+    && sleep 10 \
     && ./conf/_phpconf.sh \
     && cp /conf/_phpinfo.php /www/phpinfo.php \
     && cp /conf/_geo.php /www/geo.php \

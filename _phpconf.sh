@@ -34,6 +34,6 @@ cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 echo "${TIMEZONE}" > /etc/timezone 
 sed -i "s|;*date.timezone =.*|date.timezone = ${TIMEZONE}|i" /etc/php5/php.ini
 
-echo 'fastcgi_param GEOIP_COUNTRY_CODE $geoip_country_code;' >> /etc/nginx/fastcgi.conf
-echo 'fastcgi_param GEOIP_COUNTRY_CODE3 $geoip_country_code3;' >> /etc/nginx/fastcgi.conf
-echo 'fastcgi_param GEOIP_COUNTRY_NAME $geoip_country_name;' >> /etc/nginx/fastcgi.conf
+echo 'fastcgi_param GEOIP_COUNTRY_CODE $geoip_country_code;' >> /etc/nginx/fastcgi_params
+echo 'fastcgi_param GEOIP_COUNTRY_CODE3 $geoip_country_code3;' >> /etc/nginx/fastcgi_params
+echo 'fastcgi_param GEOIP_COUNTRY_NAME $geoip_country_name;' >> /etc/nginx/fastcgi_params
